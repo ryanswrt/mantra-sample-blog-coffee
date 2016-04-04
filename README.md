@@ -1,6 +1,8 @@
-## A Sample Blog App Written in Mantra
+## A Sample Blog App Written in Mantra + Coffeescript
 
-This is a port of the Mantra sample blog app [Mantra](https://github.com/mantrajs/mantra-sample-blog-app), but using CoffeeScript to write React components with Jade like syntax, providing about a 15% reduction in character count, and the possibility of stripping out the jsx pre-processor from the build process.
+This is a port of the [Mantra sample blog app](https://github.com/mantrajs/mantra-sample-blog-app), but using CoffeeScript to write React components with Jade like syntax, providing about a 15% reduction in character count, and the possibility of stripping out the jsx pre-processor from the build process.
+
+I know it most probably goes against the Mantra spec, but Coffeescript remains more expressive than ES2015, and the syntactical efficiency adds up in the long run
 
 ### Setting Up
 
