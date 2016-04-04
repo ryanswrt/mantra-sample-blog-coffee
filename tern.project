@@ -1,0 +1,15 @@
+{
+  "libs": [
+    "browser",
+    "react"
+  ],
+  "loadEagerly": [
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    },
+    "coffee":{}
+  }
+} 
