@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import CommentList from '../comment_list';
+const CommentList = require('../comment_list.coffee');
 
 storiesOf('comments.CommentList', module)
   .add('no comments', () => {
     return (
-      <CommentList comments={[]}/>
+      <CommentList comments={[]} passedAction={action('create comment')}/>
     );
   })
   .add('with comments', () => {

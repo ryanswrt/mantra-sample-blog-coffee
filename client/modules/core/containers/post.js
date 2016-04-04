@@ -1,4 +1,4 @@
-import Post from '../components/post';
+const Post = require('../components/post.coffee');
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, postId}, onData) => {
@@ -17,7 +17,10 @@ export const composer = ({context, postId}, onData) => {
   }
 };
 
-export default composeAll(
+let composed = composeAll(
   composeWithTracker(composer),
   useDeps()
 )(Post);
+
+
+export default composed;

@@ -1,11 +1,12 @@
 ## A Sample Blog App Written in Mantra
 
-This is a sample blog app written in [Mantra](https://github.com/kadirahq/mantra) covering core features of it.
+This is a port of the Mantra sample blog app [Mantra](https://github.com/mantrajs/mantra-sample-blog-app), but using CoffeeScript to write React components with Jade like syntax, providing about a 15% reduction in character count, and the possibility of stripping out the jsx pre-processor from the build process.
 
 ### Setting Up
 
 * Clone this repo
-* Do `npm install` to install dependencies
+* Ensure you have npm > v3 installed 
+* Do `npm install` to install dependencies (ensure you have npm v3 installed)
 * Make sure you've installed Meteor locally
 
 ### Running The App

@@ -1,7 +1,8 @@
 import {
   useDeps, composeWithTracker, composeAll
 } from 'mantra-core';
-import Component from '../components/create_comment';
+// import Component from '../components/create_comment'; Works in Meteor, but not in Webpack
+const Component = require('../components/create_comment.coffee');
 
 export const composer = ({context, clearErrors}, onData) => {
   const {LocalState} = context();

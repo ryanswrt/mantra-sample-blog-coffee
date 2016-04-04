@@ -1,10 +1,10 @@
 {
-  "name": "mantra-demo",
-  "version": "0.3.1",
+  "name": "mantra-coffee-demo",
+  "version": "0.0.1",
   "scripts": {
     "lint": "eslint ./lib ./client ./server --ext .js",
     "lintfix": "npm run lint -- --fix",
-    "testonly": "mocha .scripts/mocha_boot.js client/**/tests/**/*.js --compilers js:babel-core/register",
+    "testonly": "mocha .scripts/mocha_boot.js client/**/tests/**/*.js --compilers js:babel-core/register,coffee:coffee-script/register",
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "start-storybook -p 9001 -s ./public"
@@ -30,11 +30,16 @@
     "style-loader": "^0.13.1"
   },
   "dependencies": {
+    "coffee-loader": "^0.7.2",
+    "react-coffee-utils": "^0.0.1",
+    "coffee-script": "^1.10.0",
     "domready": "^1.0.8",
     "mantra-core": "^1.4.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-mounter": "^1.0.0"
+    "react-mounter": "^1.0.0",
+    "stack-source-map": "^1.0.4",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "private": true
 }

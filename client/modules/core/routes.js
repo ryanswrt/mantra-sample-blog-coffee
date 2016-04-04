@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import MainLayout from './components/main_layout';
+const MainLayout = require('./components/main_layout.coffee');
 import PostList from './containers/postlist';
 import Post from './containers/post';
 import NewPost from './containers/newpost';

@@ -1,4 +1,4 @@
-import NewPost from '../components/newpost';
+const NewPost = require('../components/newpost.coffee').NewPost;
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, clearErrors}, onData) => {

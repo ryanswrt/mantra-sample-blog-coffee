@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import CreateComment from '../create_comment';
+const CreateComment = require('../create_comment.coffee');
 
 storiesOf('comments.CreateComment', module)
   .add('default view', () => {

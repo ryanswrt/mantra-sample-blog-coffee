@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import PostList from '../postlist';
+const PostList = require('../postlist.coffee');
 
 storiesOf('core.PostList', module)
   .add('default view', () => {

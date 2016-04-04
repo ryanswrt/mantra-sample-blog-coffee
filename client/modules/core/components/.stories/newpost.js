@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import NewPost from '../newpost';
-
+const NewPost = require('../newpost.coffee').NewPost ;
+console.log(NewPost)
 storiesOf('core.NewPost', module)
   .add('default view', () => {
     return (

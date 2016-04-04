@@ -1,7 +1,8 @@
 import {
   useDeps, composeWithTracker, composeAll
 } from 'mantra-core';
-import Component from '../components/comment_list';
+
+const Component = require('../components/comment_list.coffee');
 
 export const composer = ({context, clearErrors, postId}, onData) => {
   const {Meteor, Collections} = context();

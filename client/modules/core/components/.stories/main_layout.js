@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import MainLayout from '../main_layout';
+import MainLayout from '../main_layout.coffee';
 
 storiesOf('core.MainLayout', module)
   .add('default view', () => {

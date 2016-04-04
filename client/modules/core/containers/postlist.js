@@ -1,4 +1,4 @@
-import PostList from '../components/postlist';
+const PostList = require('../components/postlist.coffee');
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context}, onData) => {

@@ -1,7 +1,7 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
-import Post from '../post';
+const Post = require('../post.coffee');
 
 describe('core.components.post', () => {
   it('should display the post title', () => {
