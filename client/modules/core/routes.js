@@ -12,8 +12,10 @@ export default function (injectDeps, {FlowRouter}) {
   FlowRouter.route('/', {
     name: 'posts.list',
     action() {
+      let toBeMounted =  () => <PostList/>
+      console.log(toBeMounted())
       mount(MainLayoutCtx, {
-        content: () => (<PostList />)
+        content: toBeMounted
       });
     }
   });
@@ -21,8 +23,10 @@ export default function (injectDeps, {FlowRouter}) {
   FlowRouter.route('/post/:postId', {
     name: 'posts.single',
     action({postId}) {
+      let toBeMounted = () => <Post postId={postId}/> 
+      console.log(toBeMounted())
       mount(MainLayoutCtx, {
-        content: () => (<Post postId={postId}/>)
+        content: toBeMounted
       });
     }
   });

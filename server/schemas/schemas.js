@@ -1,4 +1,7 @@
 //import types from 'kadirahq/GraphQL';
+
+import {Posts, Comments} from '/lib/collections';
+import {Meteor} from 'meteor/meteor';
 const { GraphQLObjectType, GraphQLString, GraphQLList } = GraphQL.types;
 
 Author = new GraphQLObjectType({
@@ -16,16 +19,16 @@ BlogPost = new GraphQLObjectType({
         _id: {type: GraphQLString},
         title: {type: GraphQLString},
         content: {type: GraphQLString},
-        author: {
-            type: Author,
-            resolve(post) {
-                return Collections.authors.findOne({_id: post.author})
-            }
+        author: {type: GraphQLString
+        //    type: Author,
+        //    resolve(post) {
+        //        return Collections.authors.findOne({_id: post.author})
+        //    }
         },
         comments: {
             type: new GraphQLList(Comment),
             resolve(post) {
-                return Collections.comments.find({postId: post._id}).fetch();
+                return Comments.find({postId: post._id}).fetch();
             }
         }
     })
@@ -38,10 +41,10 @@ Comment = new GraphQLObjectType({
         _id: {type: GraphQLString},
         text: {type: GraphQLString},
         author: {
-            type: Author,
-            resolve(comment) {
-                return Collections.authors.findOne({_id: comment.author});
-            }
+            type: GraphQLString,
+            //resolve(comment) {
+            //    return Authors.findOne({_id: comment.author});
+            
         }
     })
 });

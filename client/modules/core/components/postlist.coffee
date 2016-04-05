@@ -8,4 +8,5 @@ PostList = ({posts}) =>
         a href:"/post/#{post._id}", post.title
     )
 
+
 module.exports = PostList
