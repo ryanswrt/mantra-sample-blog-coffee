@@ -18,13 +18,9 @@ export const composer = ({context, postId}, onData) => {
   }
 };
 
-//console.log(composer(Post))
-
 let composed = composeAll(
   composeWithTracker(composer),
   useDeps()
 )(Post);
-
-console.log(composed)
 
 export default composed;

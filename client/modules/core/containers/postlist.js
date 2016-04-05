@@ -26,8 +26,7 @@ export const graphbinder = GraphQL.bindData((params, onData) => {
 
 const composer = ({context}, onData) =>{
   const {BlogSchema} = context();
-  BlogSchema.query('{posts{_id,title}}')
-  .then(posts=>{
+  BlogSchema.watchQuery('{posts{_id,title}}', (err,posts)=>{
       onData(null,posts);
   })
 }
