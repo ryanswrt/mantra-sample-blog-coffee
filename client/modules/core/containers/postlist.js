@@ -2,19 +2,16 @@ let PostList = require('../components/postlist.coffee');
 import {useDeps,compose, composeAll} from 'mantra-core';
 
 
-
-export const composer = GraphQL.bindData((params, onData) => {
-    console.log(params); 
+//Not used, from example here https://github.com/kadirahq/mantra/issues/101
+export const graphbinder = GraphQL.bindData((params, onData) => {
     BlogSchema = GraphQL.createLokkaClient('Blog')
-    //const {BlogSchema} = context();
     PostList.fragment = BlogSchema.createFragment(`
      fragment on BlogPost {
       _id,
       title     
      }
     `)
-    //
-    //        ...${PostList.fragment}
+    
     const query = `
     {posts 
         {
@@ -24,17 +21,22 @@ export const composer = GraphQL.bindData((params, onData) => {
     }
     `;
 
-    console.log(onData)
     return BlogSchema.watchQuery(query, onData);
 })(PostList);
 
-//console.log(composer);
+const composer = ({context}, onData) =>{
+  const {BlogSchema} = context();
+  BlogSchema.query('{posts{_id,title}}')
+  .then(posts=>{
+      onData(null,posts);
+  })
+}
 
-//let composed = composeAll(
-//        compose(composer),
-//        useDeps()
-//        )(PostList);
 
-//console.log(composed)
+let composed = composeAll(
+        compose(composer),
+        useDeps()
+        )(PostList);
 
-export default composer;//composed; 
+
+export default composed;//composed; 
